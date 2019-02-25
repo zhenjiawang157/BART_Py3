@@ -106,6 +106,8 @@ def read_count_on_DHS(args):
             #assert DHS_id not in counting
             nums = get_count_on_DHS(start,end,positions[chrom])
             counting[DHS_id]= round(nums*1000000000/(total*1000),3)
+        else:
+            counting[DHS_id] = 0.0
         line = Dfile.readline()
     Dfile.close()
     return counting
